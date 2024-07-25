@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Link from 'next/link';
 import {List, Card, Flex, Typography} from 'antd/lib';
 import api from "../../../shared/api/api";
+import Image from "next/image";
 
 interface Recipe {
     _id: string;
@@ -49,12 +50,12 @@ const RecipeList: React.FC = () => {
                     <Link href={`/${recipe._id}`}>
                         <Flex gap={12}>
                             <img loading="lazy" alt={recipe.title} width={180} height={180} style={{borderRadius: 28}}
-                                 src={recipe.image}/>
+                                 src={recipe?.image}/>
                             <Flex style={{ padding: 24 }} vertical={true} >
                                 <Typography.Title style={{ fontWeight: "700", fontSize: 18, lineHeight: "24px" }} level={5}>{recipe.title}</Typography.Title>
                                 <Typography.Paragraph ellipsis={{ rows: 2 }} style={{ fontWeight: "400", fontSize: 16, lineHeight: "24px", color: "#888888" }}>{recipe.description}</Typography.Paragraph>
                                 <Flex>
-                                   <Typography.Text style={{ color: "#888888" }} > {recipe.cookingTime} мин </Typography.Text>
+                                   <Typography.Text style={{ color: "#888888" }} > {recipe.cookingTime} min </Typography.Text>
                                 </Flex>
                             </Flex>
                         </Flex>

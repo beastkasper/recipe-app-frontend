@@ -21,7 +21,7 @@ export const useRecipeForm = () => {
         } catch (error) {
             console.log(error);
             notification.error({
-                message: error.response.data.message
+                message: error.response?.data?.message
             });
         } finally {
             setIsLoading(false);

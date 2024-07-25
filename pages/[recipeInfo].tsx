@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { Card, Descriptions, List } from 'antd/lib';
 import api from "../src/shared/api/api";
+import Image from "next/image";
 
 interface Recipe {
     _id: string;
@@ -52,7 +53,7 @@ const RecipeDetailPage: React.FC = () => {
     return (
         <Card
             title={recipe.title}
-            cover={<img loading="lazy" fetchPriority="low" style={{ padding: "12px 24px", borderRadius: 52, objectFit: "cover" }} width="100%" height="300px" alt={recipe.title} src={recipe.image} />}
+            cover={<img loading="lazy" fetchPriority="low" style={{ padding: "12px 24px", borderRadius: 52, objectFit: "cover",  width: "100%", height: "300px" }} alt={recipe.title} src={recipe.image} />}
             style={{ margin: '20px' }}
         >
             <Descriptions title="Recipe Details" bordered>
